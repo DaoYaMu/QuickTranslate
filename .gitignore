@@ -17,8 +17,9 @@ dist/
 resources/ocr_models/*.onnx
 resources/ocr_models/*.txt
 
-# --- 生成的图标 ---
-resources/icons/*.ico
+# 图标（resources/icons/app.ico）只有 17KB 且是产品外观的一部分，**提交进仓库**，
+# 这样克隆后直接运行就有正确图标，不必先跑 tools/make_icon.py。
+# 若日后需要，可在此加 resources/icons/*.ico 重新排除。
 
 # --- 工作区私有数据 ---
 .workbuddy/
