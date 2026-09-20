@@ -1,0 +1,19 @@
+# 统一以 LF 存入仓库。
+# 项目里同时有 .sh（macOS/Linux）与 .ps1（Windows）脚本，
+# 若 Windows 上的编辑器把行尾改成 CRLF，.sh 在 macOS/Linux 会直接跑不起来。
+
+* text=auto eol=lf
+
+# 显式声明脚本类型，保证检出后仍是 LF
+*.sh   text eol=lf
+*.ps1  text eol=lf
+*.py   text eol=lf
+*.md   text eol=lf
+*.json text eol=lf
+*.spec text eol=lf
+
+# 二进制资源：不要做行尾或文本转换
+*.png  binary
+*.ico  binary
+*.onnx binary
+*.db   binary

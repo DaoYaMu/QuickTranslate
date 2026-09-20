@@ -1,0 +1,40 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# --- 虚拟环境 ---
+.venv/
+venv/
+
+# --- PyInstaller 构建产物 ---
+build/quicktranslate/
+dist/
+*.spec.bak
+
+# --- 离线 OCR 模型（体积大，用 tools/prepare_ocr_models.py 生成） ---
+resources/ocr_models/*.onnx
+resources/ocr_models/*.txt
+
+# --- 生成的图标 ---
+resources/icons/*.ico
+
+# --- 工作区私有数据 ---
+.workbuddy/
+
+# --- 防呆：密钥与运行时数据绝不该进仓库 ---
+# 这些正常情况下都在 %APPDATA%\QuickTranslate\，但万一有人
+# 在项目目录里跑过、或改了数据目录，别让它们被误提交。
+keys.json
+profiles.json
+*.log
+*.db
+.timeout_migrated_*
+last_translate.txt
+_e2e_shot.png*
+selftest.txt
+
+# --- 环境变量（可能含测试用 Key） ---
+.env
+.env.*

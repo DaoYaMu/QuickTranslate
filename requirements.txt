@@ -1,0 +1,34 @@
+# QuickTranslate 运行依赖
+# 环境：Python 3.13（普通 CPython，勿用 3.13t free-threaded）
+
+# --- GUI ---
+PySide6>=6.10
+
+# --- AI 翻译（OpenAI 兼容） ---
+openai>=2.0
+
+# --- 本地 OCR ---
+rapidocr>=3.0
+onnxruntime>=1.20
+numpy>=1.26
+Pillow>=11.0
+
+# --- 交互 ---
+pyperclip>=1.9
+pynput>=1.8
+
+# --- 密钥存储（可选，缺失时自动降级为本地混淆存储） ---
+keyring>=25.0
+
+# --- 打包 ---
+pyinstaller>=6.10
+
+# ---------------------------------------------------------------------------
+# 说明：
+# 1. 系统托盘使用 PySide6 原生 QSystemTrayIcon，无需 pystray。
+# 2. rapidocr 会自动拉入 opencv-python（含 GUI 版 Qt 插件），可能与 PySide6 冲突。
+#    若已安装，建议替换为无界面版本：
+#        pip uninstall -y opencv-python
+#        pip install opencv-python-headless
+#    运行时 `import cv2` 由 headless 版本提供，功能完全一致。
+# ---------------------------------------------------------------------------
